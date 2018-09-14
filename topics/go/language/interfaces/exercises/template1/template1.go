@@ -14,42 +14,70 @@
 package main
 
 // Add imports.
+import (
+	"fmt"
+)
 
 // Declare the speaker interface with a single method called speak.
+type speaker interface {
+	speak()
+}
 
 // Declare an empty struct type named english.
+type English struct{}
 
 // Declare a method named speak for the english type
 // using a value receiver. "Hello World"
+func (English) speak() {
+	fmt.Println("Hello World")
+}
 
 // Declare an empty struct type named chinese.
+type Chinese struct{}
 
 // Declare a method named speak for the chinese type
 // using a pointer receiver. "你好世界"
+func (c *Chinese) speak() {
+	fmt.Println("你好世界")
+}
 
 // sayHello accepts values of the speaker type.
-func sayHello( /* Declare parameter */ ) {
+func sayHello(s speaker) {
 
 	// Call the speak method from the speaker parameter.
+	s.speak()
 }
 
 func main() {
 
 	// Declare a variable of the interface speaker type
 	// set to its zero value.
+	var s speaker
 
 	// Declare a variable of type english.
+	var e English
 
 	// Assign the english value to the speaker variable.
+	s = e
 
 	// Call the speak method against the speaker variable.
+	s.speak()
 
 	// Declare a variable of type chinese.
+	var c Chinese
 
 	// Assign the chinese pointer to the speaker variable.
+	s = &c
 
 	// Call the speak method against the speaker variable.
+	s.speak()
 
 	// Call the sayHello function with new values and pointers
 	// of english and chinese.
+	var ee English
+	sayHello(ee)
+	sayHello(&ee)
+	var cc Chinese
+	// sayHello(cc)
+	sayHello(&cc)
 }

@@ -8,6 +8,7 @@
 package main
 
 // Add imports
+import "fmt"
 
 func main() {
 
@@ -16,6 +17,19 @@ func main() {
 	age := 6
 
 	// If the user's name is on a special list then give them a secret greeting.
-
+	switch name {
+	case "Joey", "Chetty", "Dustin":
+		fmt.Println("Job Alerts is the best!")
+	default:
+		fmt.Println("No!  Not for you...")
+	}
 	// If the user is old enough then tell them a secret.
+	if age > 5 {
+		fmt.Println("Someday, you will know...")
+	} else if age > 12 {
+		fmt.Println("You are not yet wise enough")
+	} else if age > 21 {
+		fmt.Println("Beer before Liquor, never been sicker")
+	}
+
 }

@@ -10,7 +10,7 @@ import "fmt"
 func main() {
 
 	// Create a slice with a length of 5 elements.
-	fruits := make([]string, 5)
+	fruits := make([]string, 5, 8)
 	fruits[0] = "Apple"
 	fruits[1] = "Orange"
 	fruits[2] = "Banana"
@@ -19,6 +19,7 @@ func main() {
 
 	// You can't access an index of a slice beyond its length.
 	fruits[5] = "Runtime error"
+	fruits.
 
 	// Error: panic: runtime error: index out of range
 

@@ -18,7 +18,7 @@ var counter int
 func main() {
 
 	// Number of goroutines to use.
-	const grs = 2
+	const grs = 2000
 
 	// wg is used to manage concurrency.
 	var wg sync.WaitGroup

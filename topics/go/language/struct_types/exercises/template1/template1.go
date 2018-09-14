@@ -8,16 +8,37 @@
 package main
 
 // Add imports.
+import "fmt"
 
 // Add user type and provide comment.
-
+type user struct {
+	name	string
+	email	string
+	age		int
+}
 func main() {
 
 	// Declare variable of type user and init using a struct literal.
 
+	var me = user{
+		name:	"Joey",
+		email:	"jscg@nccn.net",
+		age:	29,
+	}
 	// Display the field values.
+	fmt.Println(me)
 
 	// Declare a variable using an anonymous struct.
+	anon_user := struct {
+		name	string
+		email	string
+		age		int
+	}{
+		name:	"Joseph",
+		email:	"J@JosephKnightbrook.com",
+		age:	29,
+	}
 
 	// Display the field values.
+	fmt.Println(anon_user)
 }

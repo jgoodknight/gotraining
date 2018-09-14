@@ -34,4 +34,6 @@ func main() {
 	fmt.Println("Flag", e2.flag)
 	fmt.Println("Counter", e2.counter)
 	fmt.Println("Pi", e2.pi)
+
+	fmt.Printf("%+v\n", e2)
 }

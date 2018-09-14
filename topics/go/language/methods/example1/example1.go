@@ -50,4 +50,5 @@ func main() {
 	for _, u := range users {
 		u.changeEmail("it@wontmatter.com")
 	}
+	fmt.Println(users)
 }

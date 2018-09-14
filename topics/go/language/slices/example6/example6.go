@@ -37,6 +37,10 @@ func main() {
 	// Declare a string with both chinese and english characters.
 	s := "世界 means world"
 
+	for i := 0; i < len(s); i++ {
+		fmt.Printf("%q\n", s[i])
+	}
+
 	// UTFMax is 4 -- up to 4 bytes per encoded rune.
 	var buf [utf8.UTFMax]byte
 

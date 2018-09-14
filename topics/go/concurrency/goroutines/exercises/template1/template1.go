@@ -10,35 +10,53 @@
 package main
 
 // Add imports.
-import "runtime"
+import (
+	"fmt"
+	"runtime"
+	"sync"
+)
 
 func init() {
 
 	// Allocate one logical processor for the scheduler to use.
-	runtime.GOMAXPROCS(1)
+	runtime.GOMAXPROCS(2)
 }
 
 func main() {
-
+	var wg sync.WaitGroup
+	wg.Add(2)
 	// Declare a wait group and set the count to two.
 
 	// Declare an anonymous function and create a goroutine.
-	{
+	go func() {
 		// Declare a loop that counts down from 100 to 0 and
 		// display each value.
-
+		count_up("UP!")
+		wg.Done()
 		// Tell main we are done.
-	}
-
+	}()
 	// Declare an anonymous function and create a goroutine.
-	{
-		// Declare a loop that counts up from 0 to 100 and
+	go func() {
+		// Declare a loop that counts down from 100 to 0 and
 		// display each value.
-
+		count_down("DOWN!")
+		wg.Done()
 		// Tell main we are done.
-	}
+	}()
 
 	// Wait for the goroutines to finish.
-
+	wg.Wait()
 	// Display "Terminating Program".
+	fmt.Println("\nTerminating Program...")
+}
+
+func count_up(id string) {
+	for i := 1; i <= 100; i++ {
+		fmt.Printf("%s %d | ", id, i)
+	}
+}
+func count_down(id string) {
+	for i := 100; i > 0; i-- {
+		fmt.Printf("%s %d | ", id, i)
+	}
 }

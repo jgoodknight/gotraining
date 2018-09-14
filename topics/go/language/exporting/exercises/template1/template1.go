@@ -13,14 +13,25 @@
 package main
 
 // Add imports.
+import (
+	"fmt"
+
+	"github.com/ardanlabs/gotraining/topics/go/language/exporting/exercises/template1/toy"
+)
 
 func main() {
 
 	// Use the New function from the toy package to create a value of
 	// type toy.
+	t := toy.New("Soldier", 137)
 
 	// Use the methods from the toy value to set some initialize
 	// values.
+	fmt.Println(t)
+	t.UpdateOnHand(22)
 
+	fmt.Println(t)
+	t.UpdateSold(2)
 	// Display each field separately from the toy value.
+	fmt.Println(t)
 }

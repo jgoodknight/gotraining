@@ -7,14 +7,13 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 	"sync"
 )
 
 func init() {
 
 	// Allocate one logical processor for the scheduler to use.
-	runtime.GOMAXPROCS(1)
+	// runtime.GOMAXPROCS(2)
 }
 
 func main() {

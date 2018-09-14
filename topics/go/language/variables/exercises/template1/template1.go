@@ -10,20 +10,37 @@
 package main
 
 // Add imports
+import "fmt"
 
 // main is the entry point for the application.
 func main() {
 
 	// Declare variables that are set to their zero value.
+	var a string
+	var b int
+	var c bool
 
 	// Display the value of those variables.
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
 
 	// Declare variables and initialize.
 	// Using the short variable declaration operator.
+	aa := "hello"
+	bb := 137
+	cc := false
 
 	// Display the value of those variables.
+	fmt.Println(aa)
+	fmt.Println(bb)
+	fmt.Println(cc)
 
 	// Perform a type conversion.
+	bbb := int64(137)
 
 	// Display the value of that variable.
+	fmt.Println(bbb)
+
+	fmt.Printf("%T [%v]\n", bbb, bbb)
 }

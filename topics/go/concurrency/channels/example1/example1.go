@@ -22,7 +22,7 @@ func main() {
 	// pooling()
 	// fanOut()
 	// fanOutSem()
-	// drop()
+	drop() 
 	// cancellation()
 }
 
@@ -94,7 +94,7 @@ func waitForFinished() {
 func pooling() {
 	ch := make(chan string)
 
-	const emps = 2
+	const emps = 5
 	for e := 0; e < emps; e++ {
 		go func(emp int) {
 			for p := range ch {
